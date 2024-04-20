@@ -9,16 +9,19 @@ import SwiftUI
 
 struct FeaturesPage: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 30) {
             Text("Features")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .fontDesign(.rounded)
                 .padding(.bottom)
+                .padding(.top, 100)
             
             FeatureCard(iconName: "checklist", description: "Log your sets and reps over time so you can utilise progressive overload to improve your strength.")
             
             FeatureCard(iconName: "heart.text.square", description: "Keep on top of your health metrics.")
+            
+            Spacer()
         }
         .padding()
     }
@@ -26,4 +29,7 @@ struct FeaturesPage: View {
 
 #Preview {
     FeaturesPage()
+        .frame(maxHeight: .infinity)
+        .background(Gradient(colors: gradientColours))
+        .foregroundStyle(.white)
 }

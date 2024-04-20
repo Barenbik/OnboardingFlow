@@ -19,11 +19,17 @@ struct FeatureCard: View {
                 .padding(.trailing, 10)
 
             Text(description)
+                .fontDesign(.rounded)
             
             Spacer()
         }
         .padding()
-        .background(.tint, in: RoundedRectangle(cornerRadius: 12))
+        .background {
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundStyle(.tint)
+                .opacity(0.8)
+                .brightness(-0.1)
+        }
         .foregroundStyle(.white)
     }
 }
